@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('core_brand')->default(null);
             $table->string('box_brand')->default(null);
             $table->string('end_tag')->default(null);
+            $table->bigInteger('assigned_to_product_manager')->default(null);
+            $table->bigInteger('assigned_to_dispatch_manager')->default(null);
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->softDeletes();
             $table->timestamps();

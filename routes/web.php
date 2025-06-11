@@ -3,12 +3,12 @@
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\IndexController;
 use App\Http\Controllers\admin\RoleController;
+use App\Http\Controllers\Api\User\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 
 Route::controller(AuthController::class)->prefix('admin')->group(function () {
