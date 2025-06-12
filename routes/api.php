@@ -17,6 +17,11 @@ Route::controller(AuthController::class)->prefix('user')->group(function(){
 Route::middleware('auth:api')->group(function(){
     Route::controller(OrderController::class)->prefix('user')->group(function(){
         Route::post('orders', 'store');
+        Route::post('orders/assign', 'assignToProductManager');
+        Route::get('product/manager', 'productManager');
+        Route::get('total/orders', 'totalOrder');
+        Route::get('complete/orders', 'complateOrder');
+        Route::get('pending/orders', 'pendingOrder');
     });
 });
 
