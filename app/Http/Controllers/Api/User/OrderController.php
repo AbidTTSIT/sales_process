@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\User;
 use App\Models\OrderItem;
 use Exception;
 
@@ -73,6 +74,98 @@ class OrderController extends Controller
               'status' => false,
               'errors' => $e->getMessage(),
             ]);
+        }
+    }
+
+    public function assignToProductManager(Request $request)
+    {
+        $validate = Validator::make($request->all(), [
+            'order_id' => 'required|exists:orders,id',
+            'assigned_to_product_manager' => 'required|exists:users,name'
+        ]);
+
+        if($validate->fails())
+        {
+            return response()->json($validate->errors());
+        }
+
+        $order =Order::find($request->order_id);
+        $order->assigned_to_product_manager = $request->assigned_to_product_manager;
+        $order->save();
+
+        if($order)
+        {
+            return response()->json([
+                'status' => true,
+                'message' => 'Order assigned to Product Manager successfully.',
+                'data' => $order
+            ]);
+        }
+    }
+
+    public function productManager()
+    {
+        $productManager = User::where('role', 'Product Manager')->get(); 
+
+        if($productManager->isEmpty())
+        {
+            return response()->json([
+                'status' => false,
+                'message' => 'No Product Managers found',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => true,
+            'users' => $productManager
+        ], 200);
+    }
+
+    public function totalOrder()
+    {
+        try{
+            $orders = Order::with('items')->get();
+
+            return response()->json([
+                'status' => true,
+                'orders' => $orders,
+            ], 200);
+        }catch(Exception $e){
+          return response()->json([
+            'status' => false,
+            'error' => $e->getMessage()
+          ], 401);
+        }
+    }
+
+    public function complateOrder()
+    {
+        try{
+            $orders = Order::where('status', 'complete')->get();
+            return response()->json([
+                'status' => true,
+                'orders' => $orders
+            ], 200);
+        }catch(Exception $e){
+          return response()->json([
+            'status' => false,
+            'error' => $e->getMessage(),
+          ], 401);
+        }
+    }
+
+    public function pendingOrder() {
+        try{
+            $orders = Order::where('status', 'pending')->get();
+            return response()->json([
+                'status' => true,
+                'orders' => $orders
+            ], 200);
+        }catch(Exception $e){
+          return response()->json([
+            'status' => false,
+            'error' => $e->getMessage(),
+          ], 401);
         }
     }
 }
