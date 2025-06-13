@@ -102,6 +102,30 @@ class OrderController extends Controller
             ]);
         }
     }
+  
+    public function orderdetails($id)
+    {
+      try{
+       $order = Order::with('items')->where('id', $id)->first();
+        if(!$order)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => 'Product Not Found.'
+            ], 404);
+        }
+        return response()->json([
+                'status' => true,
+                'order' => $order
+            ], 200);
+
+      } catch(Exception $e){
+         return response()->json([
+            'status' => false,
+            'errors' => $e->getMessage(),
+         ], 500);
+      }      
+    }
 
     public function productManager()
     {

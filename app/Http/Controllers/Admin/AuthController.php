@@ -22,14 +22,15 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
-
+        
         if ($validate->fails()) {
             flash()->error('something went wrong');
             return redirect()->back()->withInput()->withErrors($validate);
         }
-
+        
         $admin = User::where(['email' => $request->email])->first();
-        if (!$admin || !Hash::check($request->password, $admin->password) || !$admin->hasRole('admin')) {
+        // dd($admin);
+        if (!$admin || !Hash::check($request->password, $admin->password)) {
             flash()->error('Invalid credentials or unauthorized access');
             return redirect()->back()->withInput();
         }

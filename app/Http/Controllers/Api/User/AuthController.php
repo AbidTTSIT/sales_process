@@ -51,5 +51,17 @@ class AuthController extends Controller
                 'token' => $token
             ], 200);
         }
+
+    }
+    public function profile()
+    {
+        $user = JWTAuth::user();
+        if($user)
+        {
+            return response()->json([
+                'status' => true,
+                'message' => $user
+            ], 200);
+        }
     }
 }
