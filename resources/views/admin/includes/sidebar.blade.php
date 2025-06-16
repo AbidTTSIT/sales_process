@@ -99,28 +99,23 @@
                         </ul>
                     </div>
                 </li>
-                
-                <!--<li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#forms">
-                        <i class="fas fa-pen-square"></i>
-                        <p>Role Management</p>
+
+                  <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#orders">
+                        <i class="fas fa-box"></i>
+                        <p>Orders</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="forms">
+                    <div class="collapse" id="orders">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ route('role') }}">
-                                    <span class="sub-item">All Role</span>
-                                </a>
-                            </li>
-                             <li>
-                                <a href="#">
-                                    <span class="sub-item">Create Role</span>
+                                <a href="{{ route('all.orders') }}">
+                                    <span class="sub-item">All Orders</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </li>-->
+                </li>
             </ul>
         </div>
     </div>

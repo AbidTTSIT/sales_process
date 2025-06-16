@@ -63,7 +63,7 @@
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Sales</p>
-                                        <h4 class="card-title">$ 1,345</h4>
+                                        <h4 class="card-title">&#8377; 1,345</h4>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                         </div>
                         <div class="card-body pb-0">
                             <div class="mb-4 mt-2">
-                                <h1>$4,578.58</h1>
+                                <h1>&#8377;4,578.58</h1>
                             </div>
                             <div class="pull-in">
                                 <canvas id="dailySalesChart"></canvas>
@@ -426,7 +426,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>
@@ -439,7 +439,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>
@@ -452,7 +452,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>
@@ -465,7 +465,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>
@@ -478,7 +478,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>
@@ -491,7 +491,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>
@@ -504,7 +504,7 @@
                                                 Payment from #10231
                                             </th>
                                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                                            <td class="text-end">$250.00</td>
+                                            <td class="text-end">&#8377;250.00</td>
                                             <td class="text-end">
                                                 <span class="badge badge-success">Completed</span>
                                             </td>

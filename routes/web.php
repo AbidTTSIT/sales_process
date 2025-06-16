@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\IndexController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\Api\User\OrderController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,10 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
         Route::get('dispatch', 'dispatch')->name('dispatch');
         Route::post('dispatch', 'dispatchPost')->name('dispatch.post');
         Route::get('dispatch/list', 'dispatchList')->name('all.dispatch');
+    });
+
+    Route::controller(AdminOrderController::class)->group(function(){
+        Route::get('orders', 'orders')->name('all.orders');
     });
     
     Route::controller(RoleController::class)->prefix('admin')->group(function(){
