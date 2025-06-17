@@ -23,7 +23,7 @@ class EmployeeController extends Controller
     {
         $validate = Validator::make($request->all(), [
            'name' => 'required|string',
-           'mobile' => 'required|digits:10'
+          'mobile' => 'required|digits:10|unique:employees,mobile'
         ]);
 
         if($validate->fails())
